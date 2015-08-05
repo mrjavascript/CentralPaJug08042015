@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<appconfig>
+  <dbType>PostgreSQL</dbType>
+  <driver>org.postgresql.Driver</driver>
+  <jdbcConnectionString>jdbc:postgresql://localhost:5432/central_pa_jug_08042015</jdbcConnectionString>
+  <databaseIP>localhost</databaseIP>
+  <databaseUsername>central_pa_jug</databaseUsername>
+  <databasePassword>password</databasePassword>
+  <databaseSchema>application</databaseSchema>
+  <sourceTarget>C:\Users\mmelusky\Desktop\</sourceTarget>
+  <projectName>jpa</projectName>
+  <topLevel>org.melusky.model</topLevel>
+  <libPath>libs</libPath>
+  <schemaStrategy>FULL</schemaStrategy>
+</appconfig>

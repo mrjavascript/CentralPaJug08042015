@@ -1,0 +1,138 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+// Gretty
+apply plugin: 'war'
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+
+jar {
+    baseName = 'CentralPaJug08042015'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    generated {
+        java {
+            srcDirs = ['src/main/generated']
+        }
+    }
+}
+
+configurations {
+    querydslapt
+    querydsl
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+
+
+    // Persistence
+    compile 'org.eclipse.persistence:javax.persistence:2.1.0'
+
+    // Hibernate
+    compile 'org.hibernate:hibernate-core:4.3.6.Final'
+    compile 'org.hibernate:hibernate-entitymanager:4.3.6.Final'
+    compile 'org.hibernate:hibernate-ehcache:4.3.6.Final'
+    compile 'org.hibernate:hibernate-validator:5.1.2.Final'
+
+    // Spring Boot
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compile 'org.springframework:spring-test:4.1.6.RELEASE'
+    testCompile("junit:junit")
+
+    // QueryDSL
+    compile 'com.mysema.querydsl:querydsl-collections:3.6.6'
+    compile 'com.mysema.querydsl:querydsl-sql:3.6.6'
+    compile 'com.mysema.querydsl:querydsl-jpa:3.6.6'
+    compile 'com.mysema.querydsl:querydsl-core:3.6.6'
+    querydslapt 'com.mysema.querydsl:querydsl-apt:3.6.6'
+    querydsl "com.mysema.querydsl:querydsl-sql-codegen:3.6.6"
+    querydsl 'org.postgresql:postgresql:9.4-1201-jdbc41'
+
+    // Hikari Datasource
+    compile 'com.zaxxer:HikariCP:2.4.0'
+
+    // Postgres
+    compile 'org.postgresql:postgresql:9.4-1201-jdbc41'
+
+    // Mockito
+    compile 'org.mockito:mockito-all:1.10.8'
+
+
+}
+
+
+// Generate query DSL types from collections
+task generateQueryDSL(type: JavaCompile, group: 'build', description: 'Generates the QueryDSL query types') {
+    source = sourceSets.main.java
+    classpath = configurations.compile + configurations.querydslapt
+    options.compilerArgs = [
+            "-proc:only",
+            "-processor", "com.mysema.query.apt.QuerydslAnnotationProcessor,com.mysema.query.apt.jpa.JPAAnnotationProcessor"
+    ]
+    destinationDir = sourceSets.generated.java.srcDirs.iterator().next()
+}
+
+// Generate query DSL types from SQL
+task generateQueryDSLsql {
+    ext.destDir = new File('src/main/generated/')
+
+    doLast {
+        destDir.mkdirs()
+        ant.taskdef(
+                name: 'antMetaDataExporter',
+                classname: 'com.mysema.query.sql.ant.AntMetaDataExporter',
+                classpath: configurations.querydsl.asPath,
+        )
+        ant.antMetaDataExporter(
+                dbUrl: 'jdbc:postgresql://localhost/central_pa_jug_08042015',
+                dbUserName: 'central_pa_jug',
+                dbPassword: 'password',
+                jdbcDriverClass: 'org.postgresql.Driver',
+                schemaPattern: 'application',
+                targetPackage: 'org.melusky.querydsl.sql',
+                targetSourceFolder: destDir,
+        )
+    }
+}
+
+
+compileJava {
+
+    // QueryDSL - Collections
+    dependsOn generateQueryDSL
+    source generateQueryDSL.destinationDir
+
+    // sql
+    dependsOn generateQueryDSLsql
+    source generateQueryDSLsql.destDir
+}
+
+clean {
+    delete sourceSets.generated.java.srcDirs
+}
+
+idea {
+    module {
+        sourceDirs += file('src/main/generated')
+    }
+}

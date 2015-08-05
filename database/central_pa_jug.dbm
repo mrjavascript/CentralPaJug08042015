@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.8.0-alpha2" last-position="598,0" last-zoom="1.6">
+<database name="central_pa_jug_08042015">
+</database>
+
+<schema name="public" protected="true" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<schema name="application" rect-visible="true" fill-color="#e1e1e1">
+</schema>
+
+<table name="book">
+	<schema name="application"/>
+	<position x="429.75" y="243"/>
+	<column name="book_id">
+		<type name="integer"/>
+	</column>
+	<column name="book_name">
+		<type name="character varying"/>
+	</column>
+	<column name="isbn">
+		<type name="character varying"/>
+	</column>
+	<column name="date_created">
+		<type name="timestamp"/>
+	</column>
+	<column name="author_id">
+		<type name="integer"/>
+	</column>
+	<constraint name="pk_book" type="pk-constr" table="application.book">
+		<columns names="book_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="author">
+	<schema name="application"/>
+	<position x="796.25" y="101.25"/>
+	<column name="author_id">
+		<type name="integer"/>
+	</column>
+	<column name="author_name">
+		<type name="character varying"/>
+	</column>
+	<column name="date_created">
+		<type name="timestamp"/>
+	</column>
+	<constraint name="pk_author" type="pk-constr" table="application.author">
+		<columns names="author_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<constraint name="fk_author_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="application.author" table="application.book">
+	<columns names="author_id" ref-type="src-columns"/>
+	<columns names="author_id" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_book_author" type="relfk"
+	 src-table="application.book"
+	 dst-table="application.author"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>

@@ -1,0 +1,70 @@
+Tue Aug 04 21:01:29 EDT 2015  [debug] AvalonLogChute initialized using file 'velocity.log'
+Tue Aug 04 21:01:29 EDT 2015  [trace] *******************************************************************
+Tue Aug 04 21:01:29 EDT 2015  [debug] Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+Tue Aug 04 21:01:29 EDT 2015  [trace] RuntimeInstance initializing.
+Tue Aug 04 21:01:29 EDT 2015  [debug] Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+Tue Aug 04 21:01:29 EDT 2015  [debug] Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+Tue Aug 04 21:01:29 EDT 2015  [debug] Using logger class org.apache.velocity.runtime.log.AvalonLogChute
+Tue Aug 04 21:01:29 EDT 2015  [debug] Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+Tue Aug 04 21:01:29 EDT 2015  [debug] ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:29 EDT 2015  [trace] ClasspathResourceLoader : initialization complete.
+Tue Aug 04 21:01:29 EDT 2015  [debug] ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+Tue Aug 04 21:01:29 EDT 2015  [trace] Default ResourceManager initialization complete.
+Tue Aug 04 21:01:29 EDT 2015  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+Tue Aug 04 21:01:29 EDT 2015  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+Tue Aug 04 21:01:29 EDT 2015  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+Tue Aug 04 21:01:29 EDT 2015  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Include
+Tue Aug 04 21:01:29 EDT 2015  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+Tue Aug 04 21:01:29 EDT 2015  [debug] Created '20' parsers.
+Tue Aug 04 21:01:29 EDT 2015  [trace] Velocimacro : initialization starting.
+Tue Aug 04 21:01:29 EDT 2015  [debug] Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+Tue Aug 04 21:01:29 EDT 2015  [debug] Velocimacro : Default library not found.
+Tue Aug 04 21:01:29 EDT 2015  [debug] Velocimacro : allowInline = true : VMs can be defined inline in templates
+Tue Aug 04 21:01:29 EDT 2015  [debug] Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+Tue Aug 04 21:01:29 EDT 2015  [debug] Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+Tue Aug 04 21:01:29 EDT 2015  [debug] Velocimacro : autoload off : VM system will not automatically reload global library macros
+Tue Aug 04 21:01:29 EDT 2015  [trace] Velocimacro : Velocimacro : initialization complete.
+Tue Aug 04 21:01:29 EDT 2015  [trace] RuntimeInstance successfully initialized.
+Tue Aug 04 21:01:29 EDT 2015   [info] Velocimacro : added #doCalcFullType(  ) : source = templates/class.vm
+Tue Aug 04 21:01:29 EDT 2015   [info] Velocimacro : added #lazyManyToMany(  ) : source = templates/class.vm
+Tue Aug 04 21:01:29 EDT 2015   [info] Velocimacro : added #lazyOneToMany(  ) : source = templates/class.vm
+Tue Aug 04 21:01:29 EDT 2015   [info] Velocimacro : added #lazyOneToOne(  ) : source = templates/class.vm
+Tue Aug 04 21:01:29 EDT 2015   [info] Velocimacro : added #lazyManyToOne(  ) : source = templates/class.vm
+Tue Aug 04 21:01:29 EDT 2015   [info] Velocimacro : added #doAnnotations(  ) : source = templates/class.vm
+Tue Aug 04 21:01:29 EDT 2015   [info] Velocimacro : added #prefix(  ) : source = templates/class.vm
+Tue Aug 04 21:01:29 EDT 2015   [info] Velocimacro : added #doClassType(  ) : source = templates/class.vm
+Tue Aug 04 21:01:29 EDT 2015   [info] Velocimacro : added #doManyToMany(  property ) : source = templates/class.vm
+Tue Aug 04 21:01:29 EDT 2015   [info] Velocimacro : added #oneToManyAnnotation(  property ) : source = templates/class.vm
+Tue Aug 04 21:01:29 EDT 2015   [info] Velocimacro : added #manyToOneAnnotation(  property ) : source = templates/class.vm
+Tue Aug 04 21:01:29 EDT 2015   [info] Velocimacro : added #OneToOneAnnotation(  property ) : source = templates/class.vm
+Tue Aug 04 21:01:29 EDT 2015   [info] Velocimacro : added #doConstructorSignature(  ) : source = templates/class.vm
+Tue Aug 04 21:01:29 EDT 2015   [info] Velocimacro : added #doClassMacros(  ) : source = templates/class.vm
+Tue Aug 04 21:01:29 EDT 2015  [debug] ResourceManager : found templates/class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:29 EDT 2015   [warn] Velocimacro : VM addition rejected : prefix : inline not allowed to replace existing VM
+Tue Aug 04 21:01:29 EDT 2015   [warn] Failed to add macro: #prefix(  ) : source = templates/classIface.vm
+Tue Aug 04 21:01:29 EDT 2015  [debug] ResourceManager : found templates/classIface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:29 EDT 2015  [debug] ResourceManager : found templates/classRepo.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:30 EDT 2015  [debug] ResourceManager : found templates/classRepo.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:30 EDT 2015  [debug] ResourceManager : found templates/classRepo.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:30 EDT 2015   [info] Velocimacro : added #state(  ) : source = templates/enum.vm
+Tue Aug 04 21:01:30 EDT 2015  [debug] ResourceManager : found templates/enum.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:30 EDT 2015  [debug] ResourceManager : found templates/enumClass.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:30 EDT 2015  [debug] ResourceManager : found templates/applicationContext.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:30 EDT 2015  [debug] ResourceManager : found templates/ehcache.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:30 EDT 2015  [debug] ResourceManager : found templates/StringValuedEnum.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:30 EDT 2015  [debug] ResourceManager : found templates/StringValuedEnumReflect.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:30 EDT 2015  [debug] ResourceManager : found templates/StringValuedEnumType.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:30 EDT 2015  [debug] ResourceManager : found templates/MockDatabase.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:30 EDT 2015  [debug] ResourceManager : found templates/IPojoGenEntity.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:30 EDT 2015  [debug] ResourceManager : found templates/BasicDataGenerator.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:30 EDT 2015  [debug] ResourceManager : found templates/CustomRepository.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:30 EDT 2015  [debug] ResourceManager : found templates/CustomRepositoryImpl.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:30 EDT 2015  [debug] ResourceManager : found templates/RepositoryFactoryBean.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:30 EDT 2015   [info] Velocimacro : added #doprefix(  ) : source = templates/daotest.vm
+Tue Aug 04 21:01:30 EDT 2015   [info] Velocimacro : added #doSuffix(  ) : source = templates/daotest.vm
+Tue Aug 04 21:01:30 EDT 2015   [info] Velocimacro : added #custom(  title ) : source = templates/daotest.vm
+Tue Aug 04 21:01:30 EDT 2015   [info] Velocimacro : added #customPost(  title ) : source = templates/daotest.vm
+Tue Aug 04 21:01:30 EDT 2015   [info] Velocimacro : added #cleanup(  title firstPass ) : source = templates/daotest.vm
+Tue Aug 04 21:01:30 EDT 2015  [debug] ResourceManager : found templates/daotest.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:30 EDT 2015  [debug] ResourceManager : found templates/dataPoolFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Tue Aug 04 21:01:30 EDT 2015  [debug] ResourceManager : found templates/mocktest.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
